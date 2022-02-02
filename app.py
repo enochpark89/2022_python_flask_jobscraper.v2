@@ -5,7 +5,6 @@ import os
 app = Flask(__name__)
 
 @app.route('/')
-    # decorator on the route.
 def home(): 
     word = request.args.get('jobname')
     if (word):

@@ -1,6 +1,7 @@
 import re
 import requests
 from bs4 import BeautifulSoup
+# from save_to_file import save_to_file
 
 # Get jobs from stackoverflow.com
 
@@ -17,9 +18,15 @@ def get_job(keyword):
     if total_page == None:
         total_page = 1
 
-    # Cut down the page number to 7
-    if total_page > 7:
+    # Cut down the page number to 12 per page
+    if total_page > 12:
+        total_page = 12
+    elif total_page > 7:
         total_page = 7
+    elif total_page > 3:
+        total_page = 3
+    elif total_page > 1:
+        total_page = 1
 
     job_list = []
     # Scrape the job information in every page
@@ -62,7 +69,9 @@ def get_job(keyword):
 
         # Add the dictionary to the list
         jobs.append(dict)
-
+        
+        # Save to file
+        # save_to_file(jobs)
     return jobs
 
 get_job("python")

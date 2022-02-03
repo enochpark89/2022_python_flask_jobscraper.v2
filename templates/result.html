@@ -13,15 +13,26 @@
             <input type="submit" value="Submit">
         </form>
         <div class="buttons">
-            <a href="/python" class="btn btn-primary" role="button" >Python</a>
-            <a href="/javaScript" class="btn btn-success" role="button" >JavaScript</a>
-            <a href="/ruby" class="btn btn-danger" role="button" >Ruby</a>
-            <a href="/c#" class="btn btn-secondary" role="button" >C#</a>
-            <a href="/java" class="btn btn-warning" role="button" >Java</a>
-            <a href="/golang" class="btn btn-info" role="button" >Golang</a>
-            <a href="/php" class="btn btn-dark" role="button" >PHP</a>
+            <a href="/python" class="btn btn-primary" role="button" onclick="myFunction()">Python</a>
+            <a href="/javaScript" class="btn btn-success" role="button" onclick="myFunction()">JavaScript</a>
+            <a href="/ruby" class="btn btn-danger" role="button" onclick="myFunction()">Ruby</a>
+            <a href="/c#" class="btn btn-secondary" role="button" onclick="myFunction()" >C#</a>
+            <a href="/java" class="btn btn-warning" role="button" onclick="myFunction()">Java</a>
+            <a href="/golang" class="btn btn-info" role="button" onclick="myFunction()">Golang</a>
+            <a href="/php" class="btn btn-dark" role="button" onclick="myFunction()">PHP</a>
         </div>
-
+        <div class="loading" style="display: none;">
+            <h3 class="loading-text">Please wait......</h3>
+            <div class="loading-bar">
+                <div class="bar"></div>
+            </div>
+        </div>
+        <script>
+            function myFunction() {
+                var loading = document.querySelector(".loading");
+                loading.style.display = "";
+            }
+        </script>
         <hr style="width:100%;background-color:#546de5;", size="7">  
  
         {% for job in jobs %}
@@ -42,6 +53,12 @@
 
         </div>
 
-            {% endfor %}
+        {% endfor %}
+            
+        { % if jobs.Len() is 0 % }
+        <div>
+          <h1>Nothing was found......</h1>
+        </div>
+        { % endif %}
     </body>
 </html>

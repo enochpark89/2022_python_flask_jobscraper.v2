@@ -13,6 +13,7 @@ Screenshot:
 
 - Front-end: HTML, CSS, Bootstrap
 - Back-end: Python, Flask, BeautifulSoup4
+- Deployment: Heroku
 
 # Frameworks/Libraries
 
@@ -21,6 +22,8 @@ Screenshot:
 - **BeautifulSoup**: a Python library for pulling data out of HTML and XML files. It works with your favorite parser to provide idiomatic ways of navigating, searching, and modifying the parse tree.
 
 # Development Progress
+
+*Duration: 1-day*
 
 1. Create a Flask app
 2. Write a python script to scrape jobs.

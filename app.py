@@ -6,9 +6,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def home(): 
-    word = request.args.get('jobname')
-    if (word):
-        return redirect(f"/{word}")
+    # word = request.args.get('jobname')
+    # if (word):
+    #     return redirect(f"/{word}")
     
     return render_template("search.html")
 
